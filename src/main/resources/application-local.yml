@@ -1,0 +1,29 @@
+
+server:
+  port: 8888
+  
+spring:
+  application:
+    name: ms-admin-config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///C:/desarrollo/curso-lv-arqms/workspace/config
+          
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,refresh"
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
